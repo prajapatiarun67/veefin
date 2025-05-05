@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
 <form id="user-frm" class="form-signin" method="POST" action="{{ route('login.authenticate') }}">
-    
+@if (session('message') || count($errors->all()) == 0)
+        <div class="alert alert-danger">
+            {{ session('message') }}
+        </div>
+    @endif
 <img class="mb-8" src="https://www.veefin.com/assets/imgs/logo.png" alt="" width="72" height="72">
     @csrf
     <div class="form-group row">

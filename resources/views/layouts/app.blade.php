@@ -32,12 +32,15 @@
        @if(Session::has('user')) <label class="text-white">Hello {{ session('user')->name }}</label>&nbsp;@endif
         <ul id="main-navbar" class="navbar-nav d-flex flex-row align-items-center flex-wrap ms-md-auto">
         <li id="gtmDC-login-button" class="nav-item">
-            <a href="{{ route('product.list') }}" class="auth-modal-toggle btn btn-primary ripple-surface ms-2 me-1" data-auth-modal-tab="sign-in">Product</a>
+            <a href="{{ route('product') }}" class="auth-modal-toggle btn btn-primary ripple-surface ms-2 me-1" data-auth-modal-tab="sign-in">Home</a>
           </li>&nbsp;
           @if (session('user'))
           @php
             $cartTotal = session('cart') ? array_sum(array_column($cart, 'quantity')) : 0;
           @endphp
+          <li id="gtmDC-login-button" class="nav-item">
+            <a href="{{ route('product.list') }}" class="auth-modal-toggle btn btn-primary ripple-surface ms-2 me-1" data-auth-modal-tab="sign-in">Product</a>
+          </li>&nbsp;
           <li id="gtmDC-login-button" class="nav-item">
             <a href="{{ route('cart.view') }}" class="auth-modal-toggle btn btn-primary ripple-surface ms-2 me-1" data-auth-modal-tab="sign-in">Cart <span id="cart-count">{{ $cart ? $cartTotal : 0 }}</span></a>
           </li>&nbsp;
