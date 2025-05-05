@@ -4,12 +4,12 @@
 <div class="mt-60">
 <h3 class="mb-0 font-weight-semibold">Product List</h3></div>
 <!-- product Listing -->
-<div class="container d-flex justify-content-center mt-5 mb-50">
+<div class="container justify-content-center mt-5 mb-50">
   
   <div class="row">
     @if(!empty($products) && $products->count())
     @foreach($products as $index => $arrList)
-    <div class="col-md-4 mt-2">
+    <div class="col-md-4">
       <div class="card">
         <div class="card-body">
           <div class="card-img-actions">
